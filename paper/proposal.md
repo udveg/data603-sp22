@@ -1,13 +1,13 @@
 ### <u>Paper Proposal</u> 
 ---
-## REINFORCEMENT LEARNING 
+## HOW BIG DATA IS USED IN REINFORCEMENT LEARNING TO ENHANCE DATA SECURITY
 <br/>
 
-<p>Reinforcement learning(RL) is a well-known method for making consecutive decisions in the face of uncertainty. A typical RL algorithm only has a limited understanding of the environment and receives little input on the quality of its decisions. Learning agents must be able to construct meaningful abstractions, or the ability to selectively ignore unimportant information, in order to function effectively in complicated contexts. I'd want to present a hierarchical RL framework that includes an algebraic framework for describing task-specific abstraction in this study. RL is concerned with the ability to learn links between inputs, behaviors, and the occurrence of pleasant or painful events, referred to as rewards or punishments.</p>
+<p>Reinforcement learning(RL) is a well-known method for making consecutive decisions in the face of uncertainty. The best example of Reinforcement learning is Cyber Security; all machine learning models work with data, and the amount of data collected by various software and hardware components all come into play. Big data combined with machine learning software allows businesses to detect and respond to intrusions in real time. A typical RL algorithm only has a limited understanding of the environment and receives little input on the quality of its decisions. Learning agents must be able to construct meaningful abstractions, or the ability to selectively ignore unimportant information, in order to function effectively in complicated contexts. I'd want to present a hierarchical RL framework that includes an algebraic framework for describing task-specific abstraction in this study. RL is concerned with the ability to learn links between inputs, behaviors, and the occurrence of pleasant or painful events, referred to as rewards or punishments. The core purpose purpose of this paper is know how big data is used in preventing security incidents.</p>
 
 <br/>
 
-<p>So frequently have we heard about self-driving vehicles or robots exceeding humans, or a computer game overcoming the best of the champions in this era of automation! Yes, these are some of the most beautiful and complicated Deep Reinforcement Learning applications. The purpose of this paper is to introduce the idea of reinforcement learning.</p>
+<p>So frequently we have heard about cyber threats and various system that allow us to encounter cyber threats, but speaking of these systems the primary key which drives them is data, machine learning does some things really well, such as analyzing large amount of data quickly, understanding new patterns in data and implementng it. Yes, these are some of the most beautiful and complicated Deep Reinforcement Learning applications. The purpose of this paper is to introduce the idea of reinforcement learning and different architecture models that allow us to provide security using big data.</p>
 
 <br/>
 
