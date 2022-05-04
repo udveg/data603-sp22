@@ -89,4 +89,18 @@ I wanted to verify that the outcome was accurate, so I searched for publications
 
 ### 3.2 Crime Trend across the years
 
+To ascertain the trend throughout time I conducted groupby on the year column and estimated the number of offenses committed in each year. I then sorted the results by year and presented them in a time-series graph to enhance the comprehension. <br>
 
+The code for grouping and calculating the count :- 
+```
+df = dataset.groupBy(['Year'])\
+                     .count()\
+                     .orderBy(['Year', 'count'], ascending=[True, False])
+
+```
+
+<img width="450" alt="Screen Shot 2022-05-03 at 11 09 21 PM" src="https://user-images.githubusercontent.com/89949851/166618413-a7c8881a-6e45-4101-9bcd-c55e8ef80880.png">
+
+From this graph we can understand that the crime rate is plummeting across the years which is pretty good. <br>
+
+### 3.3 Crime trend 
