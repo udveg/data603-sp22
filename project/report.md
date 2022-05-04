@@ -103,4 +103,5 @@ df = dataset.groupBy(['Year'])\
 
 From this graph we can understand that the crime rate is plummeting across the years which is pretty good. <br>
 
-### 3.3 Crime trend 
+### 3.3 Crime trend across months
+I wanted to check the during which month of the year the crime rate was high for this I had to extract month from date&time column.  
