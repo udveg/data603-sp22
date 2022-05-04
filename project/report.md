@@ -122,3 +122,24 @@ It is same as analyzing crime across month but here I wanted to check how crime 
 <br>
 
 ## Step-4 (Joining different datasets for analysis) 
+
+As the dataset had lot of codes which were not comprehensive , I have used other two datasets for joining the original dataset. The columns I used for joining was District and community, initially the dataset had only respective codes by combining them I extracted respective names. For joining the dataframes I have used inner join -
+
+```
+district_df = df.join(district,df.District == district.DISTRICT,"inner")
+```
+
+<img width="500" alt="Screen Shot 2022-05-04 at 1 04 15 PM" src="https://user-images.githubusercontent.com/89949851/166741125-9ab9bf5b-20ef-4705-b210-393cdb0d282f.png">
+
+I repeated the previous procedures, grouping them and plotting them with matplotlib. According to the graph, the Harrison district had the most offenses, followed by Chicago Lawn and Greesham, which are all located inside Area 4 on the Chicago map. This explains why area 4 is one of the crime hotspots.
+
+<img  src="https://user-images.githubusercontent.com/89949851/166743258-83ec4a9d-e063-4385-b7e6-db63bdfdca29.jpeg">
+ 
+ <br>
+ 
+ ### 4.1 Comparison between arrested and non-arrested crimes
+ 
+ To comapre the relation between arrested and non-arrested crimes, firstly I filtered the crimes based on label that is whether in a crime arrest was made or not then I counted count for each of them and plotted it in single graph for comparison. 
+ 
+ <img width="434" alt="Screen Shot 2022-05-04 at 1 30 11 PM" src="https://user-images.githubusercontent.com/89949851/166746108-8b49b03f-bcf8-4a24-b132-ce8bfb36b827.png">
+
