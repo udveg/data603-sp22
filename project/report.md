@@ -111,6 +111,8 @@ month_df = dataset.select("datetime", month(col("datetime")).alias("month"), )
 ```
 <img width="471" alt="Screen Shot 2022-05-04 at 1 05 00 AM" src="https://user-images.githubusercontent.com/89949851/166625576-a81a8244-d98b-4347-838e-05dc7b8e612b.png">
 
+We can observe that during June, July, and August, the highest crime rates are recorded. That is usually in summer. This may seem strange, but according to various [articles](https://www.vox.com/2014/6/17/5818432/lock-your-doors-crime-is-worst-in-the-summer), the crime rate peaks during the summer, and the same is true for the state of Illinois.
+
 ### 3.4 Crime trend during a day
 
 It is same as analyzing crime across month but here I wanted to check how crime rate varied across different hours of the day. I followed the similar steps, that is using SQL to extract hour and then using groupby and sorthing them before plotting. 
