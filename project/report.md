@@ -104,4 +104,18 @@ df = dataset.groupBy(['Year'])\
 From this graph we can understand that the crime rate is plummeting across the years which is pretty good. <br>
 
 ### 3.3 Crime trend across months
-I wanted to check the during which month of the year the crime rate was high for this I had to extract month from date&time column.  
+I wanted to check during which month of the year the crime rate was high for this I had to extract month from date&time column. For this first I extracted month from converted time column using SQL command then used groupby to group them based on months and then counted before plotting. 
+
+```
+month_df = dataset.select("datetime", month(col("datetime")).alias("month"), )
+```
+<img width="471" alt="Screen Shot 2022-05-04 at 1 05 00 AM" src="https://user-images.githubusercontent.com/89949851/166625576-a81a8244-d98b-4347-838e-05dc7b8e612b.png">
+
+### 3.4 Crime trend during a day
+
+It is same as analyzing crime across month but here I wanted to check how crime rate varied across different hours of the day. I followed the similar steps, that is using SQL to extract hour and then using groupby and sorthing them before plotting. 
+
+<img width="443" alt="Screen Shot 2022-05-04 at 1 17 56 AM" src="https://user-images.githubusercontent.com/89949851/166626520-44bdf7f5-b98d-4197-974b-07457bcb88c5.png">
+
+<br>
+
