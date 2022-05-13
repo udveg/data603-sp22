@@ -24,7 +24,7 @@ The aim of the project is to find out the crimes that occurred more often, the c
 <br>
 
 ## About this Repository
-The repository contains an ipynb file containing the analytic code, a pdf file including the presentation slides, and the second and third datasets containing information about Chicago's districts and community areas. However, the primary dataset was extremely huge, so I have attached a md file containing a link to the third dataset. Finally, the readme file contains all project-related instructions and information.  
+The repository contains an ipynb file containing the analytic code, a pdf file including the presentation slides, and the second and third datasets containing information about Chicago's districts and community areas are attached in file named Dataset Files. However, the primary dataset was extremely huge, so I have attached a md file containing a link to the third dataset. Finally, the readme file contains all project-related instructions and information.  
 
 ### How to run the notebook:
 To run the notebook, we must have SQL functions, matplotlib, and other basic libraries installed, as mentioned in the notebook. The whole code needs to be run step by step from the beginning, and the environment should have all the three datasets attached. <br>
