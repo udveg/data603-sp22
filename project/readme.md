@@ -8,7 +8,7 @@ For this particular project I have used three datasets ,the first dataset is the
 
 * The dataset about the crime and IUCR can be found in the Chicago's official [website.](https://data.cityofchicago.org/Public-Safety/Crimes-One-year-prior-to-present/x2n5-8w5q)
 * The dataset which had information about disricts was also from the same [portal.](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6)
-* The dataset about the districts was also from the same [website.](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Neighborhoods/bbvz-uum9) 
+* The dataset about the community area was from one of the public website [website.](https://datahub.cmap.illinois.gov/dataset/community-data-snapshots-raw-data/resource/8c4e096e-c90c-4bef-9cf1-9028d094296e?inner_span=True) 
 
 <p align="center">
 <img width="760" height="450" src="https://user-images.githubusercontent.com/89949851/166584816-d4de5cb1-e21a-4233-ae02-d91e825e7fb9.jpeg">
