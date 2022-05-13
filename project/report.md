@@ -1,12 +1,14 @@
 # Chicago crime dataset analysis 
-This Notebook contains Chicago crime data analysis for the last ten years (2011-2021) <br>
+The Notebook contains Chicago crime data analysis for the last ten years (2011-2021) <br>
 The dataset was collected from the ‘city of chicago’ official website which has many public datasets.<br>
+This particular readme file provides an overview of the project and how I conducted my analysis.
 
 ## Dataset Description
 For this particular project I have used three datasets ,the first dataset is the actual crime dataset which contains information about the crime that is time, location, category and primary type. The second dataframe is about the districts in chicago which contains district name and chicago district number which I will further use for getting an comprehensive idea about the crimes in chicago based on different districts. The dataset consists of 22 columns and 7.5 Million rows (dataset size 1.78GB). The dataset has information about the reported crimes from 2001 in the city of chicago except for the murders. The third dataset is about the community area names and their respective codes. Further I will discuss how I used these datasets for analysis. 
 
 * The dataset about the crime and IUCR can be found in the Chicago's official [website.](https://data.cityofchicago.org/Public-Safety/Crimes-One-year-prior-to-present/x2n5-8w5q)
-* The dataset which had information about disricts was also from the same portal. 
+* The dataset which had information about disricts was also from the same [portal.](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6)
+* The dataset about the districts was also from the same [website.](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Neighborhoods/bbvz-uum9) 
 
 <p align="center">
 <img width="760" height="450" src="https://user-images.githubusercontent.com/89949851/166584816-d4de5cb1-e21a-4233-ae02-d91e825e7fb9.jpeg">
@@ -19,9 +21,14 @@ For this particular project I have used three datasets ,the first dataset is the
 The aim of the project is to find out the crimes that occurred more often, the crime rate trend across the years, and during which month and hour of the day the crime rate was highest. Using the second dataset, I want to get the district name and join the two dataframes so that we can evaluate the crimes based on district. Initally, the dataset had many null values and even the schema was not properly defined, so I had to perform EDA before I did any transformation on the data. Spark doesn't have any built-in libraries for plotting, so I will use matplotlib to plot and I will also use SQL functions to work with the dataframe.
 
 ---
+<br>
+
+## About this Repository
+The repository contains an ipynb file containing the analytic code, a pdf file including the presentation slides, and the second and third datasets containing information about Chicago's districts and community areas. However, the primary dataset was extremely huge, so I have attached a md file containing a link to the third dataset. Finally, the readme file contains all project-related instructions and information.  
 
 ### How to run the notebook:
-To run the notebook, we must have SQL functions, matplotlib, and other basic libraries installed, as mentioned in the notebook. The whole code needs to be run step by step from the beginning, and the environment should have all the two datasets attached.  
+To run the notebook, we must have SQL functions, matplotlib, and other basic libraries installed, as mentioned in the notebook. The whole code needs to be run step by step from the beginning, and the environment should have all the three datasets attached. <br>
+The first dataset is a large file so it may take lot of space and also time to read the file. 
 
 ## Step-1 (Exploring and Cleaning Data) 
 For the exploration, I started with defining the schema and then dropping all the columns which were unecessary, the dataset consisted of 22 columns and 7.4 million rows, but for this particular analysis I considered only last ten years data so I have trimmed the data according to year. Moreover, the data had many null values which had to be removed. To begin the process of cleaning my data in preparation for analysis, I wanted to check to see whether I had any nulls. I began by determining which columns had null values. Several did, including the following: Location Description, District, Community Area, X and Y coordinates, and both Latitude and Longitude. I removed them and also there where certain records which looked non relatable for example some crimes where described as "NON-CRIMINAL" I removed all of them using 'filter' function. These are some of the columns that are used in analyzing. <br>
@@ -133,13 +140,38 @@ district_df = df.join(district,df.District == district.DISTRICT,"inner")
 
 I repeated the previous procedures, grouping them and plotting them with matplotlib. According to the graph, the Harrison district had the most offenses, followed by Chicago Lawn and Greesham, which are all located inside Area 4 on the Chicago map. This explains why area 4 is one of the crime hotspots.
 
-<img  src="https://user-images.githubusercontent.com/89949851/166743258-83ec4a9d-e063-4385-b7e6-db63bdfdca29.jpeg">
  
  <br>
  
  ### 4.1 Comparison between arrested and non-arrested crimes
  
- To comapre the relation between arrested and non-arrested crimes, firstly I filtered the crimes based on label that is whether in a crime arrest was made or not then I counted count for each of them and plotted it in single graph for comparison. 
- 
- <img width="434" alt="Screen Shot 2022-05-04 at 1 30 11 PM" src="https://user-images.githubusercontent.com/89949851/166746108-8b49b03f-bcf8-4a24-b132-ce8bfb36b827.png">
+To comapre the relation between arrested and non-arrested crimes, firstly I filtered the crimes based on label that is whether in a crime arrest was made or not then I counted count for each of them and plotted it in single graph for comparison. <br>
+In addition, in this section I have attempted to determine the type of crime for which the greatest number of arrests were made so that we can determine which types of crimes were deemed serious, as well as the average rate of arrests made relative to non-arrested crimes in order to determine the trend over the years.
 
+<br>
+
+## Step-5 (Location-based Anlaysis)
+
+Here, I attempted to extract insights from the second and third datasets by applying them to districts and community areas. I plotted the crimes using bar graphs for both districts and community areas, and I utilized scatter plots for crimes that occurred frequently, which provided a clear picture of the crimes.
+
+![Screen Shot 2022-05-12 at 7 43 52 PM](https://user-images.githubusercontent.com/89949851/168184752-3de771e1-a2ba-4843-9acb-9c8c0f5cb51f.png)
+
+I wanted to demonstrate how the scatter plot was utilized to illustrate the crime. Using this, I was able to obtain numerous information, such as the locations where various crimes occurred and the crime rates in various regions.
+
+## Conclusion
+
+I was able to find the relation crime trend across months and hours of the day. The city's overall crime rate, especially the violent crime rate, is higher than the US average. Chicago was responsible for nearly half of 2016's increase in homicides in the US, though the nation's crime rates remain near historic lows. Following are major finding of this analysis:
+<br>
+
+* Theft, Battery are by far the most frequent crimes in Chicago. Criminal Damage and Narcotics are falling into the third and fourth column in number. Assault, Burglary, Deceptive Practice, Motor Vehicle Theft and Robbery are next in the line in terms of frequency.
+* According to the results the number of crimes are in decline from 2010 to 2015. In 2015, total number of crimes seemed to have its lowest value. However, there was increase in the crimes . 
+* During June, July, and August, the highest crime rates are recorded that is usually in summer. It is true for most of the places that crime rate increases during summer. The crime rate appears to have peaked in the summer and remained at its maximum level from June to August, while it was lower in the winter, reaching its lowest point in February. The monthly pattern was steady throughout the entire year.
+* The crime rate is higher in certain District in the Southern part of Chicago. More specifically, District Harrison, Greesham, and Chicago Lawn have the highest crime rate.
+* The arrest has remained relatively constant for a longer period of time in different years with the exception of 2016 which the trend was relatively decreasing after May. The results also showed that the number of arrests has its lowest value in 2020 and its highest value in 2012.
+* The most arrests belongs to Narcotics, Battery, Theft, Criminal Trespass, and Assault, respectively.
+* The ratio of Arrest has peaked in 2014 following a sharp drop between 2014 and 2016. The ratio of the arrests has its lowest value in 2016.
+* The Area 4 is on the south side of the city. The possible reason for the crime rate being too high may be the proximity of Riverdale to the freeway and the streets. Sadly, the economic conditions in the region are also quite poor, with most people making less than $8,000 a year.
+* Crimes such as homicide and sexual assault are more prevalent in the core of Area 4 and its surrounding suburbs, whereas the number of thefts increases as we approach the city limits.
+* Austin has the highest crime rate in Chicago's 15th district's neighborhood areas, of which Area 4 is a portion. Located on the West Side of the city, it is the third largest community area in terms of people and the second largest in terms of land area.
+
+If our data analytics can provide us with all of this information about the security status of the city of Chicago, I believe that a larger data analytics project will provide significantly more valuable information that can be used as a powerful resource for taking prudent actions to improve the security status of our cities.
